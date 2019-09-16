@@ -1,3 +1,1 @@
-Let's get started writing some awesome spring boot applications m8
-Twinkle Twinkle little star
-how i wonder what you are....
+removed the previous non-sense about nursery rhymes
