@@ -1,0 +1,9 @@
+Dependencies:
+
+DevTools
+H2
+JPA
+MySQL
+ThymeLeaf
+Spring Web
+Lombok

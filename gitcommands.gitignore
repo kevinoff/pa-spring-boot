@@ -1,0 +1,7 @@
+git commands:
+
+cd (drag folder)
+git pull
+git add .
+git commit -m "commit message"
+git push
