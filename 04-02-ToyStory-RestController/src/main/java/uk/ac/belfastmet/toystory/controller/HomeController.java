@@ -13,4 +13,8 @@ public class HomeController {
 	public String home() {
 		return "index";
 	}
+	@GetMapping("")
+	public String shrek() {
+		return "shrek";
+	}
 }
