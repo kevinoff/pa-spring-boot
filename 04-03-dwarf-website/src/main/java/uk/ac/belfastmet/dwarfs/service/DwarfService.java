@@ -30,7 +30,21 @@ public class DwarfService {
 	public ArrayList<Dwarf> getTolkienDwarfs(){
 				
 		this.tolkienDwarfs = new ArrayList<Dwarf>();
-		//add dwarfs
+		
+		this.tolkienDwarfs.add(new Dwarf("Thorin", "Tolkien", "Thorin.png"));
+		this.tolkienDwarfs.add(new Dwarf("Balin", "Tolkien", "Balin.png"));
+		this.tolkienDwarfs.add(new Dwarf("Dwalin", "Tolkien", "Dwalin.png"));
+		this.tolkienDwarfs.add(new Dwarf("Fili", "Tolkien", "Fili.png"));
+		this.tolkienDwarfs.add(new Dwarf("Kili", "Tolkien", "Kili.png"));
+		this.tolkienDwarfs.add(new Dwarf("Dori", "Tolkien", "Dori.png"));
+		this.tolkienDwarfs.add(new Dwarf("Nori", "Tolkien", "Nori.png"));
+		this.tolkienDwarfs.add(new Dwarf("Oin", "Tolkien", "Oin.png"));
+		this.tolkienDwarfs.add(new Dwarf("Ori", "Tolkien", "Ori.png"));
+		this.tolkienDwarfs.add(new Dwarf("Gloin", "Tolkien", "Gloin.png"));
+		this.tolkienDwarfs.add(new Dwarf("Bifur", "Tolkien", "Bifur.png"));
+		this.tolkienDwarfs.add(new Dwarf("Bofur", "Tolkien", "Bofur.png"));
+		this.tolkienDwarfs.add(new Dwarf("Bombur", "Tolkien", "Bombur.png"));
+		
 		return this.tolkienDwarfs;
 	}
 	

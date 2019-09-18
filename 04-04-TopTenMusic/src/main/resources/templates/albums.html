@@ -19,20 +19,19 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+	<nav class="navbar navbar-expand-sm bg-info navbar-dark">
 		<ul class="navbar-nav">
 			<li class="nav-item active"><a class="nav-link" href="/">Home</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="/disney">Disney</a>
+			<li class="nav-item"><a class="nav-link" href="/singles">Singles</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="/tolkien">Tolkien</a>
+			<li class="nav-item"><a class="nav-link" href="/albums">Albums</a>
 			</li>
 		</ul>
 	</nav>
 	<div class="jumbotron text-center">
 
-		<h1>This page is about Disney Dwarfs</h1>
-		<h2 th:text="${numberOfDwarfs}"></h2>
+		<h1>This page is Top 10 Albums</h1>
 		<br />
 
 	</div>
@@ -40,7 +39,7 @@
 
 	<div class="container">
 
-		<p>This page will contain information about Disney Dwarfs</p>
+		<p>Top 10 Albums are as follows</p>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -49,9 +48,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="dwarf: ${dwarfs}">
-					<td th:text="${dwarf.name}"></td>
-					<td><img src="../static/img/Sleepy.png" th:src="@{/img/} + ${dwarf.image}"/></td>
+				<tr th:each="topTen: ${topTenAlbums}">
+				
+					<td th:text="${topTen.title}"></td>		
+					<td><img src="../static/img/circles.png" th:src="@{/img/} + ${topTen.image}"/></td>
+					
 				</tr>
 			</tbody>
 		</table>
