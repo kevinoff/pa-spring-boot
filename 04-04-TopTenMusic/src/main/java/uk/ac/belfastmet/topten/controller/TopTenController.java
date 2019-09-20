@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import uk.ac.belfastmet.topten.domain.TopTen;
 import uk.ac.belfastmet.topten.service.TopTenService;
 
 @Controller
@@ -20,11 +21,14 @@ public class TopTenController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		model.addAttribute("pageTitle", "Home");
-		logger.info("info");
+		logger.info("got home page");
 //		logger.trace("trace");
 //		logger.debug("debug");
 //		logger.warn("warn");
 //		logger.error("error");
+		
+		TopTen topten = new TopTen();
+		logger.info(topten.toString());
 				return "index";
 	}
 	
@@ -44,5 +48,14 @@ public class TopTenController {
 		TopTenService topTenService = new TopTenService();
 		model.addAttribute("topTenSingles", topTenService.getTopTenSingles());
 		return "singles";
+	}
+	
+	//get genre page
+	@RequestMapping(value = "/genre", method = RequestMethod.GET)
+	public String genrePage(Model model) {
+		model.addAttribute("pageTitle", "Genre");
+		TopTenService topTenService = new TopTenService();
+		model.addAttribute("topTenGenre", topTenService.getTopTenGenre());
+		return "genre";
 	}
 }
