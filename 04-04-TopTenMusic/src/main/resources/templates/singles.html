@@ -25,12 +25,9 @@
 
 		<h1>This page is Top 10 Singles</h1>
 		<br />
-
 	</div>
 
-
 	<div class="container">
-
 		<p>Top 10 Singles are as follows</p>
 		<table class="table table-striped">
 			<thead>
@@ -40,16 +37,14 @@
 				</tr>
 			</thead>
 			<tbody>
-			<!--  loop through topTenSingles from TopTenService.java and save current position to topTen, get title and image for each -->
 			
+			<!--  loop through topTenSingles from TopTenService.java and save current position to topTen, get title and image for each -->
 				<tr th:each="topTen: ${topTenSingles}">
 					<td th:text="${topTen.title}"></td>		
 					<td><img src="../static/img/circles.png" th:src="@{/img/} + ${topTen.image}"/></td>
-					
 				</tr>
 			</tbody>
 		</table>
-
 	</div>
 
 </body>
