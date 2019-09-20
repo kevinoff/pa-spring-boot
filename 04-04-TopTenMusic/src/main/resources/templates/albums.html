@@ -2,18 +2,10 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
-
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-<!-- Custom Styles  -->
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
 <title th:text="${pageTitle}"></title>
 </head>
@@ -48,11 +40,11 @@
 				</tr>
 			</thead>
 			<tbody>
+			
+			<!--  loop through topTenSingles from TopTenService.java and save current position to topTen, get title and image for each -->
 				<tr th:each="topTen: ${topTenAlbums}">
-				
 					<td th:text="${topTen.title}"></td>		
 					<td><img src="../static/img/circles.png" th:src="@{/img/} + ${topTen.image}"/></td>
-					
 				</tr>
 			</tbody>
 		</table>

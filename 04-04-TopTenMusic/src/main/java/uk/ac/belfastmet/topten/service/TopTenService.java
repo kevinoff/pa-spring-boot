@@ -9,10 +9,13 @@ public class TopTenService {
 	private ArrayList<TopTen> topTenSingles;
 	private ArrayList<TopTen> topTenAlbums;
 	
+	//method to populate an array list with title, artist and image for singles
 	public ArrayList<TopTen> getTopTenSingles(){
 		
+		//take this scope of topTenSingles and create a new array list of type TopTen
 		this.topTenSingles = new ArrayList<TopTen>();
 		
+		//take this scope and add new object of TopTen with 3 variables
 		this.topTenSingles.add(new TopTen("1. TAKE ME BACK TO LONDON", "ED SHEERAN FT STORMZY", "takemebacktolondon.png"));
 		this.topTenSingles.add(new TopTen("2. TASTE (MAKE IT SHAKE)", "AITCH", "tastemakeitshake.png"));
 		this.topTenSingles.add(new TopTen("3. HIGHER LOVE", "Kygo & Whitney Houston", "higherlove.png"));
@@ -27,10 +30,10 @@ public class TopTenService {
 		return this.topTenSingles;
 	}
 	
+	//same as above but for albums
 	public ArrayList<TopTen> getTopTenAlbums(){
 		
 		this.topTenAlbums = new ArrayList<TopTen>();
-		
 		this.topTenAlbums.add(new TopTen("1. HOLLYWOOD'S BLEEDING", "POST MALONE", "hollywoodsbleeding.png"));
 		this.topTenAlbums.add(new TopTen("2. NO 6 COLLABORATIONS PROJECT", "ED SHEERAN", "no6collab.png"));
 		this.topTenAlbums.add(new TopTen("3. AITCH2O", "AITCH", "aitch2o.png"));
@@ -41,7 +44,7 @@ public class TopTenService {
 		this.topTenAlbums.add(new TopTen("8. K-12", "MELANIE MARTINEZ", "k12.png"));
 		this.topTenAlbums.add(new TopTen("9. SNACKS", "JAX JONES", "snacks.png"));
 		this.topTenAlbums.add(new TopTen("10. WHEN WE ALL FALL ASLEEP WHERE DO WE GO", "BILLIE EILISH", "whenweallfall.png"));
-				
+		
 		return this.topTenAlbums;
 	}
 }

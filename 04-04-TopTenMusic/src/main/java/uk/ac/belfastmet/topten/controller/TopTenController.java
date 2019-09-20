@@ -12,12 +12,14 @@ import uk.ac.belfastmet.topten.service.TopTenService;
 
 public class TopTenController {
 
+	//get home page
 	@GetMapping("")
 	public String homePage(Model model) {
 		model.addAttribute("pageTitle", "Home");
 				return "index";
 	}
 	
+	//get albums page
 	@GetMapping("/albums")
 	public String albumsPage(Model model) {
 		model.addAttribute("pageTitle", "Albums");
@@ -26,6 +28,7 @@ public class TopTenController {
 		return "albums";
 	}
 	
+	//get singles page
 	@GetMapping("/singles")
 	public String singlesPage(Model model) {
 		model.addAttribute("pageTitle", "Singles");
