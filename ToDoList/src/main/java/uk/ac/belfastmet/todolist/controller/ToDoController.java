@@ -19,7 +19,6 @@ public class ToDoController {
 	//return home page
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
-		logger.info("enter homePage");
 		
 		model.addAttribute("toDoList", todoservice.getToDoList());
 		
@@ -29,7 +28,6 @@ public class ToDoController {
 	
 	@RequestMapping(value = "/completed", method = RequestMethod.GET)
 	public String completePage(Model model) {
-		logger.info("enter completed page");
 		
 		model.addAttribute("completedList", todoservice.getCompletedList());
 		
@@ -39,7 +37,6 @@ public class ToDoController {
 	
 	@RequestMapping(value = "/incomplete", method = RequestMethod.GET)
 	public String incompletePage(Model model) {
-		logger.info("enter incomplete page");
 		
 		model.addAttribute("incompleteList", todoservice.getIncompleteList());
 		

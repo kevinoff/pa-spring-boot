@@ -17,7 +17,7 @@ public class ToDo {
 		public int compare(ToDo obj1, ToDo obj2) {
 			// sort by ascending
 			return obj1.priority-obj2.priority;
-		}};
+	}};
 	
 	//constructor
 	public ToDo() {

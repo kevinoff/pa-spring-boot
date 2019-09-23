@@ -37,39 +37,36 @@ public class ToDoService {
 		return this.toDoList;		
 	}
 	
+	//return objects from toDoList with Status set to true
 	public ArrayList<ToDo> getCompletedList(){
-		//logger.info("enter getCompletedList");
+		logger.info("enter getCompletedList");
 		getToDoList();
 		this.completedList = new ArrayList<ToDo>();
 		
 		for(ToDo loopPosition:this.toDoList) {
-			//logger.info("inside for loop");
+		
 			if(loopPosition.isTaskStatusBool() == true) {
-				//logger.info("inside if for task bool");
+				
 				this.completedList.add(loopPosition);
 			}
-			//logger.info("exit if");
-			//logger.info("end of for loop");
 		}
-		//logger.info("exit getCompletedList");
+		logger.info("exit getCompletedList");
 		return this.completedList;
 	}
 	
+	//return objects from toDoList with Status set to false
 	public ArrayList<ToDo> getIncompleteList(){
-		//logger.info("enter getCompletedList");
+		logger.info("enter getCompletedList");
 		getToDoList();
 		this.incompleteList = new ArrayList<ToDo>();
 		
 		for(ToDo loopPosition:this.toDoList) {
-			//logger.info("inside for loop");
 			if(loopPosition.isTaskStatusBool() == false) {
 				logger.info("inside if for task bool");
 				this.incompleteList.add(loopPosition);
 			}
-			//logger.info("exit if");
-			//logger.info("end of for loop");
 		}
-		//logger.info("exit getCompletedList");
+		logger.info("exit getCompletedList");
 		return this.incompleteList;
 	}
 }
