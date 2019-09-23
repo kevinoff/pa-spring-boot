@@ -13,6 +13,14 @@ public class TopTen {
 	}
 	
 	//instance variables
+	/**
+	 * 
+	 * @param position The chart position
+	 * @param title Song or Album title
+	 * @param artist Song or Album title
+	 * @param image artwork belonging to song or album
+	 */
+	
 	public TopTen(String position, String title, String artist, String image) {
 		super();
 		this.position = position;
@@ -20,7 +28,7 @@ public class TopTen {
 		this.artist = artist;
 		this.image = image;
 	}
-	
+
 	public String toString() {
 		return position + " " + title + " " + artist;
 	}

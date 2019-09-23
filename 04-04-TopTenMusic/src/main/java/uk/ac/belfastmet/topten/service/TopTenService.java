@@ -57,7 +57,7 @@ public class TopTenService {
 		this.topTenGenre.add(new TopTen("2", "ROCK N' ROLL", "", "rocknroll.jpg"));
 		this.topTenGenre.add(new TopTen("3", "ALTERNATIVE", "", "alternative.jpg"));
 		this.topTenGenre.add(new TopTen("4", "HARD ROCK", "", "hardrock.jpg"));
-		this.topTenGenre.add(new TopTen("5", "CLASSICAL", "", "classic.jpg"));
+		this.topTenGenre.add(new TopTen("5", "CLASSICAL", "", "classical.jpg"));
 		this.topTenGenre.add(new TopTen("6", "THRASH METAL", "", "tmetal.jpg"));
 		this.topTenGenre.add(new TopTen("7", "POP", "", "pop.jpg"));
 		this.topTenGenre.add(new TopTen("8", "PROGRESSIVE ROCK", "", "prock.jpg"));

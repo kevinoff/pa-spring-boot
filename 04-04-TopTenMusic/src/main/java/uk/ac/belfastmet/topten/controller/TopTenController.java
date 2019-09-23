@@ -22,17 +22,15 @@ public class TopTenController {
 	public String homePage(Model model) {
 		model.addAttribute("pageTitle", "Home");
 		logger.info("got home page");
-//		logger.trace("trace");
-//		logger.debug("debug");
-//		logger.warn("warn");
-//		logger.error("error");
-		
 		TopTen topten = new TopTen();
 		logger.info(topten.toString());
 				return "index";
 	}
 	
-	//get albums page
+	/**
+	 * @param model new variable topTenAlbums set by the return of get method in topTenService.java
+	 * @return album.html
+	 */
 	@RequestMapping(value = "/albums", method = RequestMethod.GET)
 	public String albumsPage(Model model) {
 		model.addAttribute("pageTitle", "Albums");
@@ -49,7 +47,7 @@ public class TopTenController {
 		model.addAttribute("topTenSingles", topTenService.getTopTenSingles());
 		return "singles";
 	}
-	
+		
 	//get genre page
 	@RequestMapping(value = "/genre", method = RequestMethod.GET)
 	public String genrePage(Model model) {
