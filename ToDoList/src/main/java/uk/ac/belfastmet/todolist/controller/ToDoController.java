@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import uk.ac.belfastmet.todolist.service.ToDoService;
 
 /**
@@ -18,9 +20,11 @@ import uk.ac.belfastmet.todolist.service.ToDoService;
 //Class start
 public class ToDoController {
 	
-	Logger logger = LoggerFactory.getLogger(ToDoController.class);
-	ToDoService todoservice = new ToDoService();
+	@Autowired
+	private ToDoService wiredToDoService;
 	
+	Logger logger = LoggerFactory.getLogger(ToDoController.class);
+		
 	/**
 	 * Controller to populate and return index.html
 	 * @return index.html
@@ -28,7 +32,8 @@ public class ToDoController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		
-		model.addAttribute("toDoList", todoservice.getToDoList());
+		model.addAttribute("toDoList", wiredToDoService.getToDoList());
+		//wiredToDoService.getNumberOfTasks();
 		
 		logger.info("exit homePage");
 		return "index";
@@ -41,7 +46,7 @@ public class ToDoController {
 	@RequestMapping(value = "/completed", method = RequestMethod.GET)
 	public String completePage(Model model) {
 		
-		model.addAttribute("completedList", todoservice.getCompletedList());
+		model.addAttribute("completedList", wiredToDoService.getCompletedList());
 		
 		logger.info("exit completed page");
 		return "completed";
@@ -54,7 +59,7 @@ public class ToDoController {
 	@RequestMapping(value = "/incomplete", method = RequestMethod.GET)
 	public String incompletePage(Model model) {
 		
-		model.addAttribute("incompleteList", todoservice.getIncompleteList());
+		model.addAttribute("incompleteList", wiredToDoService.getIncompleteList());
 		
 		logger.info("exit incomplete page");
 		return "incomplete";
