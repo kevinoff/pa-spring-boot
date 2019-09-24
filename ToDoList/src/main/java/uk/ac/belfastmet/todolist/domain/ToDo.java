@@ -2,6 +2,10 @@ package uk.ac.belfastmet.todolist.domain;
 
 import java.util.Comparator;
 
+//Javadocs needed - stones in glass houses - I have to do the same to mine!
+//I would consider a different name for this class as I'm assuming a ToDo object wouldn't be completed
+//if you know what I mean. This object is more like a Task or Job which can be incomplete or complete
+
 public class ToDo {
 
 	private String nameOfTask;
@@ -13,10 +17,10 @@ public class ToDo {
 	
 	public static Comparator<ToDo> sortByPriority = new Comparator<ToDo>() {
 
-		@Override
-		public int compare(ToDo obj1, ToDo obj2) {
-			// sort by ascending
-			return obj1.priority-obj2.priority;
+	@Override
+	public int compare(ToDo obj1, ToDo obj2) {
+		// sort
+		return obj1.priority-obj2.priority;
 	}};
 	
 	//constructor
@@ -73,7 +77,4 @@ public class ToDo {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	
-	
-	
 }

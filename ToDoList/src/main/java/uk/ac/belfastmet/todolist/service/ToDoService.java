@@ -15,8 +15,10 @@ public class ToDoService {
 	private ArrayList<ToDo> completedList;
 	private ArrayList<ToDo> incompleteList;
 	
+	//javadoc for the toDoList initialisation should be at the top of the method rather than in the method.
+	//Javadocs are used for classes and methods comments for inside
+	
 	public ArrayList<ToDo> getToDoList(){
-		logger.info("enter getToDoList");
 		
 		this.toDoList = new ArrayList<ToDo>();
 		
@@ -45,9 +47,9 @@ public class ToDoService {
 	 */
 	public ArrayList<ToDo> getCompletedList(){
 		
-		logger.info("enter getCompletedList");
 		getToDoList();
 		this.completedList = new ArrayList<ToDo>();
+		
 		for(ToDo loopPosition:this.toDoList) {
 			if(loopPosition.isTaskStatusBool() == true) {
 				
@@ -64,7 +66,7 @@ public class ToDoService {
 	 * @return array list of incomplete tasks
 	 */
 	public ArrayList<ToDo> getIncompleteList(){
-		logger.info("enter getCompletedList");
+
 		getToDoList();
 		this.incompleteList = new ArrayList<ToDo>();
 		

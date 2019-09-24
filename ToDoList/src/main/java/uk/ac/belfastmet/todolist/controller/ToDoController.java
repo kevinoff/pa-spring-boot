@@ -7,15 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import uk.ac.belfastmet.todolist.service.ToDoService;
 
+/**
+ * Location of all controllers, explained with separate java docs
+ * @author off12066827
+ */
+
 @RequestMapping()
 @Controller
 
+//Class start
 public class ToDoController {
 	
 	Logger logger = LoggerFactory.getLogger(ToDoController.class);
 	ToDoService todoservice = new ToDoService();
 	
-	//return home page
+	/**
+	 * Controller to populate and return index.html
+	 * @return index.html
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		
@@ -25,6 +34,10 @@ public class ToDoController {
 		return "index";
 	}
 	
+	/**
+	 * Controller to populate and return complete.html
+	 * @return complete.html
+	 */
 	@RequestMapping(value = "/completed", method = RequestMethod.GET)
 	public String completePage(Model model) {
 		
@@ -34,6 +47,10 @@ public class ToDoController {
 		return "completed";
 	}
 	
+	/**
+	 * Controller to populate and return incomplete.html
+	 * @return incomplete.html
+	 */
 	@RequestMapping(value = "/incomplete", method = RequestMethod.GET)
 	public String incompletePage(Model model) {
 		
@@ -42,5 +59,4 @@ public class ToDoController {
 		logger.info("exit incomplete page");
 		return "incomplete";
 	}
-
 }
