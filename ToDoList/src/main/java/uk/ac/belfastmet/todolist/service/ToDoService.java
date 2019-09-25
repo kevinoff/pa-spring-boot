@@ -1,7 +1,7 @@
 package uk.ac.belfastmet.todolist.service;
 
 import java.util.ArrayList;
-//import java.util.Collections;
+import java.util.Collections;
 import java.util.Iterator;
 
 import org.slf4j.Logger;
@@ -43,10 +43,6 @@ public class ToDoService {
 	 * @return array list of tasks
 	 */
 	public ArrayList<Task> getToDoList(){
-				
-//	templates of new objects by type and name
-//		this.toDoList = (new ToDo(priority, "nameOfTask", "descOfTask", "taskEndDate", taskStatusBool, "ownership"));
-//		this.toDoList = (new ToDo(int, String, String String, Boolean, String));
 
 		this.toDoList = new ArrayList<Task>();
 

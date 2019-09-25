@@ -163,7 +163,7 @@ public class Task {
 	}
 	
 	@Column(name = "task_status")
-	public String isTaskStatus() {
+	public String getTaskStatus() {
 		return taskStatus;
 	}
 	public void setTaskStatus(String taskStatus) {
