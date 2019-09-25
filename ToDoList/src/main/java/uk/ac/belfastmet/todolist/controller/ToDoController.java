@@ -33,7 +33,7 @@ public class ToDoController {
 	public String homePage(Model model) {
 		
 		model.addAttribute("toDoList", wiredToDoService.getToDoList());
-		//wiredToDoService.getNumberOfTasks();
+		wiredToDoService.getNumberOfTasks();
 		
 		logger.info("exit homePage");
 		return "index";

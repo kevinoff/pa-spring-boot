@@ -28,17 +28,6 @@ public class Task {
 	//private Boolean taskStatusBool;
 	private String priority;
 	
-	//getters and setters for Id
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	public long getId() {
-		
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	
 //type conflict with mysql
 //	public static Comparator<Task> sortByPriority = new Comparator<Task>() {
 //	@Override
@@ -47,12 +36,22 @@ public class Task {
 //		return obj1.priority-obj2.priority;
 //	}};
 	
-	//constructor
+	/**
+	 * constructor no parameters
+	 */
 	public Task() {
 		super();
 	}
 	
-	//instance variables
+	/**]
+	 * constructor
+	 * @param priority
+	 * @param nameOfTask
+	 * @param descOfTask
+	 * @param taskEndDate
+	 * @param taskStatusBool
+	 * @param ownership
+	 */
 	public Task(String priority, String nameOfTask, String descOfTask, String taskEndDate, boolean taskStatusBool, String ownership) {
 		super();
 		this.priority = priority;
@@ -63,8 +62,16 @@ public class Task {
 		this.ownership = ownership;
 	}
 	
-	/**getters and setters mapped to mysql
-	 */
+	//getters and setters for Id
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Column(name = "name")
 	public String getNameOfTask() {
 		return nameOfTask;
@@ -79,6 +86,22 @@ public class Task {
 	}
 	public void setDescOfTask(String descOfTask) {
 		this.descOfTask = descOfTask;
+	}
+		
+	@Column(name = "user")
+	public String getOwnership() {
+		return ownership;
+	}
+	public void setOwnership(String ownership) {
+		this.ownership = ownership;
+	}
+	
+	@Column(name = "priority")
+	public String getPriority() {
+		return priority;
+	}
+	public void setPriority(String priority) {
+		this.priority = priority;
 	}
 	
 //	@Column(name = "task_end_date")
@@ -97,19 +120,4 @@ public class Task {
 //		this.taskStatusBool = taskStatusBool;
 //	}
 	
-	@Column(name = "user")
-	public String getOwnership() {
-		return ownership;
-	}
-	public void setOwnership(String ownership) {
-		this.ownership = ownership;
-	}
-	
-	@Column(name = "priority")
-	public String getPriority() {
-		return priority;
-	}
-	public void setPriority(String priority) {
-		this.priority = priority;
-	}
 }

@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import uk.ac.belfastmet.todolist.domain.Task;
 import uk.ac.belfastmet.todolist.repository.TaskRepository;
 
+/**
+ * class to populate data that the controller asks for
+ * @author off12066827
+ */
 @Service
 public class ToDoService {
 	
@@ -26,19 +30,19 @@ public class ToDoService {
 	private ArrayList<Task> completedList;
 	private ArrayList<Task> incompleteList;
 	
-	//test method
+	/**
+	 * log no. of tasks from taskRepository
+	 */
 	public void getNumberOfTasks() {
 		
 		logger.info("no. of tasks: {}", taskRepository.count());
 	}
 	
 	public ArrayList<Task> getToDoList(){
-		
-		this.toDoList = new ArrayList<Task>();
-		
-		//templates of new objects by type and name
-		 //this.toDoList = (new ToDo(priority, "nameOfTask", "descOfTask", "taskEndDate", taskStatusBool, "ownership"));
-		 //this.toDoList = (new ToDo(int, String, String String, Boolean, String));
+				
+//	templates of new objects by type and name
+//		this.toDoList = (new ToDo(priority, "nameOfTask", "descOfTask", "taskEndDate", taskStatusBool, "ownership"));
+//		this.toDoList = (new ToDo(int, String, String String, Boolean, String));
 		
 //	Commented out and populated using Iterables instead
 //		this.toDoList.add(new Task(2, "Design", "design doc for client", "2019-09-25", false, "Kevin"));
@@ -47,10 +51,17 @@ public class ToDoService {
 //		this.toDoList.add(new Task(4, "Testing", "testing prototype", "2019-10-02", false, "Kevin"));
 //		this.toDoList.add(new Task(5, "Release", "first release", "2019-10-05", false, "Kevin"));
 		
+		this.toDoList = new ArrayList<Task>();
+
 		Iterable <Task> tasks = taskRepository.findAll();
 		Iterator <Task> iterator = tasks.iterator();
+		/**
+		 * iterate through iterator and log data as a string
+		 */
 		while(iterator.hasNext()) {
 			logger.info("{}", iterator.next().toString());
+			//this.toDoList.add();
+			
 		}
 		
 		//sort ascending before return
