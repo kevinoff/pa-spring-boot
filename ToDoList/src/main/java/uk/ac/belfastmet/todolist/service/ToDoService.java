@@ -1,7 +1,7 @@
 package uk.ac.belfastmet.todolist.service;
 
 import java.util.ArrayList;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.Iterator;
 
 import org.slf4j.Logger;
@@ -25,7 +25,7 @@ public class ToDoService {
 	
 	Logger logger = LoggerFactory.getLogger(ToDoService.class);
 	
-	Task todo = new Task();
+	Task task = new Task();
 	private ArrayList<Task> toDoList;
 	private ArrayList<Task> completedList;
 	private ArrayList<Task> incompleteList;
@@ -38,30 +38,28 @@ public class ToDoService {
 		logger.info("no. of tasks: {}", taskRepository.count());
 	}
 	
+	/**
+	 * populate to do list
+	 * @return array list of tasks
+	 */
 	public ArrayList<Task> getToDoList(){
 				
 //	templates of new objects by type and name
 //		this.toDoList = (new ToDo(priority, "nameOfTask", "descOfTask", "taskEndDate", taskStatusBool, "ownership"));
 //		this.toDoList = (new ToDo(int, String, String String, Boolean, String));
-		
-//	Commented out and populated using Iterables instead
-//		this.toDoList.add(new Task(2, "Design", "design doc for client", "2019-09-25", false, "Kevin"));
-//		this.toDoList.add(new Task(1, "Requirements", "gather requirements from client", "2019-09-24", true, "Kevin"));
-//		this.toDoList.add(new Task(3, "Develop", "development process", "2019-09-30", false, "Kevin"));
-//		this.toDoList.add(new Task(4, "Testing", "testing prototype", "2019-10-02", false, "Kevin"));
-//		this.toDoList.add(new Task(5, "Release", "first release", "2019-10-05", false, "Kevin"));
-		
+
 		this.toDoList = new ArrayList<Task>();
 
 		Iterable <Task> tasks = taskRepository.findAll();
 		Iterator <Task> iterator = tasks.iterator();
 		/**
-		 * iterate through iterator and log data as a string
+		 * iterate through iteratable and log data as a string
 		 */
+		logger.info("before while");
 		while(iterator.hasNext()) {
-			logger.info("{}", iterator.next().toString());
-			//this.toDoList.add();
-			
+
+			this.toDoList.add(iterator.next());		
+			logger.info("end of while");
 		}
 		
 		//sort ascending before return
@@ -69,6 +67,7 @@ public class ToDoService {
 		
 		logger.debug("toDoList: " + this.toDoList);
 		logger.info("exit getToDoList");
+		logger.info("{}" + this.toDoList);
 		return this.toDoList;		
 	}
 	

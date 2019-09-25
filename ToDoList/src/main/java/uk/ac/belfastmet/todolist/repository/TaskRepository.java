@@ -7,6 +7,7 @@ import uk.ac.belfastmet.todolist.domain.Task;
 
 /**
  * connection to the db
+ * Crud (Create, replace, update, delete. from the <Task> table)
  * @author off12066827
  *
  */
