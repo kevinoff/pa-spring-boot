@@ -39,6 +39,7 @@ public class Task {
 		this.id = id;
 	}
 	
+//type conflict with mysql
 //	public static Comparator<Task> sortByPriority = new Comparator<Task>() {
 //	@Override
 //	public int compare(Task obj1, Task obj2) {

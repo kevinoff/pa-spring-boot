@@ -36,10 +36,11 @@ public class ToDoService {
 		
 		this.toDoList = new ArrayList<Task>();
 		
-		 //templates of new objects by type and name
+		//templates of new objects by type and name
 		 //this.toDoList = (new ToDo(priority, "nameOfTask", "descOfTask", "taskEndDate", taskStatusBool, "ownership"));
 		 //this.toDoList = (new ToDo(int, String, String String, Boolean, String));
-		 
+		
+//	Commented out and populated using Iterables instead
 //		this.toDoList.add(new Task(2, "Design", "design doc for client", "2019-09-25", false, "Kevin"));
 //		this.toDoList.add(new Task(1, "Requirements", "gather requirements from client", "2019-09-24", true, "Kevin"));
 //		this.toDoList.add(new Task(3, "Develop", "development process", "2019-09-30", false, "Kevin"));
@@ -69,7 +70,7 @@ public class ToDoService {
 		getToDoList();
 		this.completedList = new ArrayList<Task>();
 		
-//		broken by sql boolean
+//	broken by sql boolean type
 //		for(Task loopPosition:this.toDoList) {
 //			if(loopPosition.isTaskStatusBool() == true) {
 //				
@@ -90,7 +91,7 @@ public class ToDoService {
 		getToDoList();
 		this.incompleteList = new ArrayList<Task>();
 		
-//		BROKEN BY SQL BOOLEAN
+//	broken by sql boolean type
 //		for(Task loopPosition:this.toDoList) {
 //			if(loopPosition.isTaskStatusBool() == false) {
 //				logger.info("inside if for task bool");

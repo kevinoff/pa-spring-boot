@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import uk.ac.belfastmet.todolist.service.ToDoService;
 
 /**
- * Location of all controllers, explained with separate java docs
+ * Location of all controllers, commented with separate java docs
  * @author off12066827
  */
 
