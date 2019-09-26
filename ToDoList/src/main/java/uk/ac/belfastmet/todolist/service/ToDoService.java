@@ -1,7 +1,6 @@
 package uk.ac.belfastmet.todolist.service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 
 import org.slf4j.Logger;

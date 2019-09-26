@@ -1,7 +1,5 @@
 package uk.ac.belfastmet.todolist.domain;
 
-import java.util.Comparator;
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -34,14 +32,6 @@ public class Task {
 	private String taskStatus;
 	private String priority;
 	
-//type conflict with mysql
-//	public static Comparator<Task> sortByPriority = new Comparator<Task>() {
-//	@Override
-//	public int compare(Task obj1, Task obj2) {
-//		// sort
-//		return obj1.priority-obj2.priority;
-//	}};
-	
 	/**
 	 * constructor no parameters
 	 * @param string 
@@ -69,6 +59,11 @@ public class Task {
 		this.ownership = ownership;
 	}
 	
+	/**
+	 * override toString method
+	 * @return variables to string
+	 */
+	@Override
 	public String toString() {
 		logger.info("inside toString");
 		return priority + nameOfTask + descOfTask + taskEndDate + taskStatus + ownership;
@@ -99,6 +94,7 @@ public class Task {
 	public String getNameOfTask() {
 		return nameOfTask;
 	}
+	
 	/**
 	 * set task name
 	 * @param nameOfTask String
@@ -115,6 +111,7 @@ public class Task {
 	public String getDescOfTask() {
 		return descOfTask;
 	}
+	
 	/**
 	 * set description
 	 * @param descOfTask String
@@ -131,6 +128,7 @@ public class Task {
 	public String getOwnership() {
 		return ownership;
 	}
+	
 	/**
 	 * set ownership
 	 * @param ownership String
@@ -138,6 +136,7 @@ public class Task {
 	public void setOwnership(String ownership) {
 		this.ownership = ownership;
 	}
+	
 	/**
 	 * get priority as String
 	 * @return priority String
@@ -154,20 +153,46 @@ public class Task {
 		this.priority = priority;
 	}
 	
+	/**
+	 * get end date String
+	 * @return
+	 */
 	@Column(name = "task_end_date")
 	public String getTaskEndDate() {
 		return taskEndDate;
 	}
+	
+	/**
+	 * set end date String
+	 * @param taskEndDate
+	 */
 	public void setTaskEndDate(String taskEndDate) {
 		this.taskEndDate = taskEndDate;
 	}
 	
+	/**
+	 * get task status String
+	 * @return
+	 */
 	@Column(name = "task_status")
 	public String getTaskStatus() {
 		return taskStatus;
 	}
+	
+	/**
+	 * set task status String
+	 * @param taskStatus
+	 */
 	public void setTaskStatus(String taskStatus) {
 		this.taskStatus = taskStatus;
 	}
+
+//type conflict with mysql to be fixed
+	//	public static Comparator<Task> sortByPriority = new Comparator<Task>() {
+	//	@Override
+	//	public int compare(Task obj1, Task obj2) {
+	//		// sort
+	//		return obj1.priority-obj2.priority;
+	//	}};
 	
 }
